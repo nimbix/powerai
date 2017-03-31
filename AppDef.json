@@ -1,7 +1,7 @@
 {
-    "name": "IBM PowerAI: ML/DL environment for POWER8",
-    "description": "Ubuntu Linux ephemeral environment on POWER8 system with IBM PowerAI ML/DL frameworks.",
-    "author": "Nimbix, Inc.",
+    "name": "IBM PowerAI: ML/DL for POWER8",
+    "description": "Ubuntu Linux ephemeral environment on POWER8 system with IBM PowerAI ML/DL frameworks.  To build your own images from this distribution, use FROM jarvice/ubuntu-ibm-mldl-ppc64le in your Dockerfile.  This image is available publicly on Docker Hub.",
+    "author": "IBM",
     "licensed": true,
     "classifications": [
         "IBM POWER/Artificial Intelligence",
@@ -24,11 +24,27 @@
     ],
     "commands": {
         "run": {
-            "path": "/usr/bin/env",
+            "path": "/bin/bash",
             "interactive": false,
-            "name": "Run",
-            "description": "Run a command in the environment and exit.",
+            "name": "Batch",
+            "description": "Run a batch command using /bin/bash.  The output may be monitored directly in your web browser.",
             "parameters": {
+                "-l": {
+                    "name": "-l",
+                    "description": "-l",
+                    "type": "CONST",
+                    "value": "-l",
+                    "positional": true,
+                    "required": true
+                },
+                "-c": {
+                    "name": "-c",
+                    "description": "-c",
+                    "type": "CONST",
+                    "value": "-c",
+                    "positional": true,
+                    "required": true
+                },
                 "command": {
                     "name": "Command",
                     "description": "Command to run",
