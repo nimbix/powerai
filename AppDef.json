@@ -12,8 +12,8 @@
         "Software Development/Software Testing"
     ],
     "machines": [
-        "np8g1",
-        "np8g4"
+        "np8g*",
+        "np8c*"
     ],
     "scale_max": 1,
     "vault-types": [
