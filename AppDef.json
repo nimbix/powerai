@@ -15,7 +15,6 @@
         "np8g*",
         "np8c*"
     ],
-    "scale_max": 1,
     "vault-types": [
         "FILE",
         "BLOCK",
