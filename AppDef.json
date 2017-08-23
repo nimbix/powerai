@@ -57,7 +57,7 @@
             "path": "/sbin/init",
             "interactive": true,
             "name": "Launch",
-            "description": "Launch and ephemeral environment and connect via SSH. Save any persistent data, code, or prototypes in /data to be able to access again in the future.",
+            "description": "Launch and ephemeral environment and connect via SSH or graphical browser window. Save any persistent data, code, or prototypes in /data to be able to access again in the future.",
             "parameters": {}
         }
     },
