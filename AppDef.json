@@ -12,6 +12,7 @@
         "Software Development/Software Testing"
     ],
     "machines": [
+        "np8gk*",
         "np8g*"
     ],
     "vault-types": [
