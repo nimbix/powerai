@@ -1,2 +1,2 @@
 # PowerAI
-Application implementation of IBM PowerAI from jarvice/ubuntu-ibm-mldl-ppc64le
+Application implementation of IBM PowerAI from nimbix/base-powerai5:5.0

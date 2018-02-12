@@ -1,4 +1,4 @@
-FROM jarvice/ubuntu-ibm-mldl-ppc64le
+FROM nimbix/base-powerai5:5.0
 
 # AppDef
 COPY AppDef.json /etc/NAE/AppDef.json
