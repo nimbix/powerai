@@ -1,6 +1,6 @@
 {
     "name": "PowerAI 5",
-    "description": "Distributed Deep Learning (DDL) environment on POWER8 system with IBM PowerAI ML/DL frameworks.  To build your own images from this distribution, use FROM nimbix/base-powerai5:5.0 in your Dockerfile.  This image is available publicly on Docker Hub.",
+    "description": "Distributed Deep Learning (DDL) environment on POWER system with IBM PowerAI ML/DL frameworks.  Provides TensorFlow and Caffe.",
     "author": "IBM",
     "licensed": true,
     "classifications": [
