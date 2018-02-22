@@ -11,6 +11,9 @@
         "Machine Learning/Deep Learning",
         "Software Development/Software Testing"
     ],
+    "hints": [
+        "SCALE_NODES"
+    ],
     "machines": [
         "np8g[1-8]"
     ],
