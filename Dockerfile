@@ -3,11 +3,13 @@ FROM nimbix/base-powerai5:5.0
 # EULA from base image
 RUN cp -f /etc/EULA.txt /etc/NAE/license.txt
 
-# samples
-RUN mkdir -p /usr/local/samples && chown nimbix:nimbix /usr/local/samples
-USER nimbix
+# samples:
+# this is pretty lame in that a duplicate layer is created, but the tarball
+# we get is packaged by root:root and there's no way to tell Docker what user
+# to untar it as, even if you use the USER directive first!
+RUN mkdir -p /usr/local/samples
 ADD JM.tar.gz /usr/local/samples
-USER root
+RUN chown -R nimbix:nimbix /usr/local/samples/*
 
 # motd
 COPY motd /etc/motd
