@@ -4,7 +4,7 @@ FROM nimbix/base-powerai5:5.0
 RUN cp -f /etc/EULA.txt /etc/NAE/license.txt
 
 # samples
-RUN chown nimbix:nimbix /usr/local/samples
+RUN mkdir -p /usr/local/samples && chown nimbix:nimbix /usr/local/samples
 USER nimbix
 ADD JM.tar.gz /usr/local/samples
 USER root
