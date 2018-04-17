@@ -62,11 +62,11 @@
             "description": "Launch an ephemeral environment and connect via SSH or graphical browser window. Save any persistent data, code, or prototypes in /data to be able to access again in the future.",
             "parameters": {}
         },
-        "TensorFlow Notebook": {
+        "TensorFlow": {
             "path": "/usr/local/bin/nimbix_desktop",
             "interactive": true,
             "scale_max": 1,
-            "name": "TensorFlow Notebook",
+            "name": "TensorFlow",
             "description": "Launch a Jupyter Notebook with TensorFlow activated.  Connect directly from your web browser.",
             "parameters": {
                 "terminal": {
