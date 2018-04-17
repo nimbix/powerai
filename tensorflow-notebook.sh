@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export PATH=/opt/anaconda2/bin:$PATH
 cd
 rm -rf ~/notebooks && mkdir -p ~/notebooks
 cd ~/notebooks
