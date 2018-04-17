@@ -22,4 +22,5 @@ RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice
 COPY screenshot.png /etc/NAE/screenshot.png
 
 # TensorFlow notebook (from desktop)
+RUN yum -y install xdg-utils && yum clean all
 COPY tensorflow-notebook.sh /usr/local/bin/tensorflow-notebook.sh
