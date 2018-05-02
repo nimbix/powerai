@@ -1,5 +1,5 @@
 {
-    "name": "PowerAI 5",
+    "name": "PowerAI 5.1",
     "description": "Distributed Deep Learning (DDL) environment on POWER system with IBM PowerAI ML/DL frameworks.  Provides TensorFlow and Caffe.",
     "author": "IBM",
     "licensed": true,

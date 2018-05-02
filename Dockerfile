@@ -1,4 +1,4 @@
-FROM nimbix/base-powerai5:5.0
+FROM nimbix/base-powerai5:5.1
 
 # EULA from base image
 RUN cp -f /etc/EULA.txt /etc/NAE/license.txt
