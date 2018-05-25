@@ -24,3 +24,6 @@ COPY screenshot.png /etc/NAE/screenshot.png
 # TensorFlow notebook (from desktop)
 RUN yum -y install xdg-utils && yum clean all
 COPY tensorflow-notebook.sh /usr/local/bin/tensorflow-notebook.sh
+COPY tensorflow.desktop /etc/skel/Desktop/tensorflow.desktop
+COPY tensorflow.png /usr/share/icons/tensorflow.png
+RUN chmod 755 /etc/skel/Desktop/tensorflow.desktop

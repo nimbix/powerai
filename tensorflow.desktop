@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TensorFlow Notebook
+Comment=
+Exec=/usr/local/bin/tensorflow-notebook.sh
+Icon=tensorflow
+Path=
+Terminal=true
+StartupNotify=false

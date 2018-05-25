@@ -61,43 +61,6 @@
             "name": "Launch",
             "description": "Launch an ephemeral environment and connect via SSH or graphical browser window. Save any persistent data, code, or prototypes in /data to be able to access again in the future.",
             "parameters": {}
-        },
-        "TensorFlow": {
-            "path": "/usr/local/bin/nimbix_desktop",
-            "interactive": true,
-            "scale_max": 1,
-            "name": "TensorFlow",
-            "description": "Launch a Jupyter Notebook with TensorFlow activated.  Connect directly from your web browser.",
-            "parameters": {
-                "terminal": {
-                    "name": "terminal",
-                    "type": "CONST",
-                    "value": "/usr/bin/xfce4-terminal",
-                    "positional": true,
-                    "required": true
-                },
-                "disableserver": {
-                    "name": "disableserver",
-                    "type": "CONST",
-                    "value": "--disable-server",
-                    "positional": true,
-                    "required": true
-                },
-                "command": {
-                    "name": "command",
-                    "type": "CONST",
-                    "value": "--command=/usr/local/bin/tensorflow-notebook.sh",
-                    "positional": true,
-                    "required": true
-                },
-                "title": {
-                    "name": "title",
-                    "type": "CONST",
-                    "value": "--title=Jupyter-Notebook",
-                    "positional": true,
-                    "required": true
-                }
-            }
         }
     },
     "image": {
