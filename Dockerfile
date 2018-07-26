@@ -1,4 +1,4 @@
-FROM nimbix/base-powerai5:5.1
+FROM nimbix/base-powerai5:5.2
 
 # EULA from base image
 RUN cp -f /etc/EULA.txt /etc/NAE/license.txt
@@ -22,7 +22,7 @@ RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice
 COPY screenshot.png /etc/NAE/screenshot.png
 
 # TensorFlow notebook (from desktop)
-RUN yum -y install xdg-utils && yum clean all
+RUN apt-get -y install xdg-utils && apt-get clean
 COPY tensorflow-notebook.sh /usr/local/bin/tensorflow-notebook.sh
 COPY tensorflow.desktop /etc/skel/Desktop/tensorflow.desktop
 COPY tensorflow.png /usr/share/icons/tensorflow.png
