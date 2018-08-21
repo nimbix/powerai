@@ -4,7 +4,7 @@ export PATH=/opt/anaconda3/bin:$PATH
 cd
 rm -rf ~/notebooks && mkdir -p ~/notebooks
 cd ~/notebooks
-sudo ln -s /usr/local/samples .
+[ -d /usr/local/samples ] && sudo ln -s /usr/local/samples . || true
 sudo ln -s /data .
 xdg-settings set default-web-browser firefox.desktop
 echo "Loading TensorFlow..."
