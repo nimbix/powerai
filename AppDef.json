@@ -1,6 +1,6 @@
 {
-    "name": "PowerAI 5.2",
-    "description": "Distributed Deep Learning (DDL) environment on POWER system with IBM PowerAI ML/DL frameworks.  Provides TensorFlow and Caffe.",
+    "name": "PowerAI 5.2 (Python 3)",
+    "description": "Distributed Deep Learning (DDL) environment on POWER system with IBM PowerAI ML/DL frameworks.  Provides TensorFlow (Python 3) and Caffe.",
     "author": "IBM",
     "licensed": true,
     "classifications": [
