@@ -1,9 +1,13 @@
 FROM ibmcom/powerai:1.6.0-all-ubuntu18.04-py3
 
+# prevent build pipelines from breaking if older CUDA installed on build box
+ENV DOCKER_NVIDIA_REQUIRE_CUDA ${NVIDIA_REQUIRE_CUDA}
+ENV NVIDIA_REQUIRE_CUDA ""
+
 # Nimbix bits and Nimbix desktop
 RUN curl -H 'Cache-Control: no-cache' \
     https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh \
-    | bash -s -- --setup-nimbix-desktop
+    | bash
 EXPOSE 22
 EXPOSE 5901
 EXPOSE 443
@@ -30,3 +34,7 @@ RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice
 
 # Material Compute screenshot
 COPY screenshot.png /etc/NAE/screenshot.png
+
+# restore CUDA requirement
+ENV NVIDIA_REQUIRE_CUDA ${DOCKER_NVIDIA_REQUIRE_CUDA}
+ENV DOCKER_NVIDIA_REQUIRE_CUDA ""
