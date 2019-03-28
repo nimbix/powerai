@@ -17,7 +17,7 @@ ADD https://raw.githubusercontent.com/IBM/powerai/powerai-1.6.0/dockerhub/LICENS
 RUN echo "-----------------------------------------------" >>/etc/EULA.txt
 RUN echo "For the Anaconda End User License Agreement, please visit:" >> EULA.txt
 RUN echo "  http://docs.anaconda.com/anaconda/eula/" >> EULA.txt
-RUN cp -f /etc/EULA.txt /etc/NAE/license.txt
+RUN mkdir -p /etc/NAE && cp -f /etc/EULA.txt /etc/NAE/license.txt
 
 # samples
 RUN mkdir -p /usr/local/samples
