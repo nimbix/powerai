@@ -13,7 +13,7 @@ EXPOSE 5901
 EXPOSE 443
 
 # EULA from base image
-RUN ADD https://raw.githubusercontent.com/IBM/powerai/powerai-1.6.0/dockerhub/LICENSE /etc/EULA.txt
+ADD https://raw.githubusercontent.com/IBM/powerai/powerai-1.6.0/dockerhub/LICENSE /etc/EULA.txt
 RUN echo "-----------------------------------------------" >>/etc/EULA.txt && cat /opt/anaconda2/LICENSE.txt >>/etc/EULA.txt
 RUN cp -f /etc/EULA.txt /etc/NAE/license.txt
 
