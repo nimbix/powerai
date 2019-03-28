@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec /usr/bin/sudo -H /opt/anaconda2/bin/conda "$@"
+

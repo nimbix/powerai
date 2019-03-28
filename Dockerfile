@@ -1,15 +1,25 @@
-FROM nimbix/base-powerai5:5.3
+FROM ibmcom/powerai:1.6.0-all-ubuntu18.04-py3
+
+# Nimbix bits and Nimbix desktop
+RUN curl -H 'Cache-Control: no-cache' \
+    https://raw.githubusercontent.com/nimbix/image-common/master/install-nimbix.sh \
+    | bash -s -- --setup-nimbix-desktop
+EXPOSE 22
+EXPOSE 5901
+EXPOSE 443
 
 # EULA from base image
+RUN ADD https://raw.githubusercontent.com/IBM/powerai/powerai-1.6.0/dockerhub/LICENSE /etc/EULA.txt
+RUN echo "-----------------------------------------------" >>/etc/EULA.txt && cat /opt/anaconda2/LICENSE.txt >>/etc/EULA.txt
 RUN cp -f /etc/EULA.txt /etc/NAE/license.txt
 
-# samples:
-# this is pretty lame in that a duplicate layer is created, but the tarball
-# we get is packaged by root:root and there's no way to tell Docker what user
-# to untar it as, even if you use the USER directive first!
+# samples
 RUN mkdir -p /usr/local/samples
 ADD JM.tar.gz /usr/local/samples
-RUN chown -R nimbix:nimbix /usr/local/samples/*
+
+# anaconda helpers
+COPY conda /usr/bin
+COPY conda-activate.sh /etc/profile.d/conda-activate.sh
 
 # motd
 COPY motd /etc/motd
@@ -20,9 +30,3 @@ RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice
 
 # Material Compute screenshot
 COPY screenshot.png /etc/NAE/screenshot.png
-
-# TensorFlow notebook (from desktop)
-RUN apt-get -y install xdg-utils && apt-get clean
-COPY tensorflow-notebook.sh /usr/local/bin/tensorflow-notebook.sh
-COPY tensorflow.desktop /etc/skel/Desktop/tensorflow.desktop
-COPY tensorflow.png /usr/share/icons/tensorflow.png
