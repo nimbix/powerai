@@ -21,8 +21,8 @@ RUN echo "  http://docs.anaconda.com/anaconda/eula/" >> EULA.txt
 RUN mkdir -p /etc/NAE && cp /etc/EULA.txt /etc/NAE/license.txt && chmod 0644 /etc/EULA.txt
 
 # samples
-RUN mkdir -p /usr/local/samples
-ADD JM.tar.gz /usr/local/samples
+RUN mkdir -p /usr/local/notebook/samples
+ADD JM.tar.gz /usr/local/notebook/samples
 
 # anaconda helpers
 RUN cp -f ${CONDA_INSTALL_DIR}/etc/profile.d/conda.sh /etc/profile.d
@@ -32,7 +32,7 @@ COPY conda /usr/bin/conda
 RUN conda install -y jupyter && conda clean --all
 RUN apt-get update && apt-get -y install redir && apt-get clean
 RUN chmod 04555 /usr/bin/redir
-RUN ln -s /data /usr/local/data
+RUN ln -s /data /usr/local/notebook/data
 COPY notebook.sh /usr/local/bin/notebook.sh
 
 # AppDef
