@@ -18,7 +18,7 @@ RUN iconv -f unicode -t utf8 /etc/EULA-unicode.txt >/etc/EULA.txt
 RUN echo "-----------------------------------------------" >>/etc/EULA.txt
 RUN echo "For the Anaconda End User License Agreement, please visit:" >> EULA.txt
 RUN echo "  http://docs.anaconda.com/anaconda/eula/" >> EULA.txt
-RUN mkdir -p /etc/NAE && cp /etc/EULA.txt >/etc/NAE/license.txt && chmod 0644 /etc/EULA.txt
+RUN mkdir -p /etc/NAE && cp /etc/EULA.txt /etc/NAE/license.txt && chmod 0644 /etc/EULA.txt
 
 # samples
 RUN mkdir -p /usr/local/samples
