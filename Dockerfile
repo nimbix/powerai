@@ -1,3 +1,33 @@
+#
+# Copyright (c) 2019, Nimbix, Inc.
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# 1. Redistributions of source code must retain the above copyright notice,
+#    this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright notice,
+#    this list of conditions and the following disclaimer in the documentation
+#    and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+# The views and conclusions contained in the software and documentation are
+# those of the authors and should not be interpreted as representing official
+# policies, either expressed or implied, of Nimbix, Inc.
+#
+
 FROM ibmcom/powerai:1.6.0-all-ubuntu18.04
 
 # prevent build pipelines from breaking if older CUDA installed on build box
@@ -16,8 +46,8 @@ EXPOSE 443
 ADD https://raw.githubusercontent.com/IBM/powerai/powerai-1.6.0/dockerhub/LICENSE /etc/EULA-unicode.txt
 RUN iconv -f unicode -t utf8 /etc/EULA-unicode.txt >/etc/EULA.txt
 RUN echo "-----------------------------------------------" >>/etc/EULA.txt
-RUN echo "For the Anaconda End User License Agreement, please visit:" >> EULA.txt
-RUN echo "  http://docs.anaconda.com/anaconda/eula/" >> EULA.txt
+RUN echo "For the Anaconda End User License Agreement, please visit:" >> /etc/EULA.txt
+RUN echo "  http://docs.anaconda.com/anaconda/eula/" >> /etc/EULA.txt
 RUN mkdir -p /etc/NAE && cp /etc/EULA.txt /etc/NAE/license.txt && chmod 0644 /etc/EULA.txt
 
 # anaconda helpers
