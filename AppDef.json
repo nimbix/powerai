@@ -59,6 +59,7 @@
             "path": "/usr/local/bin/notebook.sh",
             "interactive": true,
             "publicip": true,
+            "url": "https://%PUBLICADDR%/?token=%RANDOM64%",
             "name": "Launch",
             "description": "Launch an ephemeral environment and connect via Juputer notebook directly in your browser, or SSH.  Save any persistent data, code, or prototypes in /data to be able to access again in the future.",
             "parameters": {}
