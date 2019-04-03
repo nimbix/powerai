@@ -25,15 +25,15 @@ RUN mkdir -p /usr/local/samples
 ADD JM.tar.gz /usr/local/samples
 
 # anaconda helpers
-COPY conda /usr/bin
-COPY conda-activate.sh /etc/profile.d/conda-activate.sh
+RUN cp /opt/anaconda3/etc/profile.d/conda.sh /etc/profile.d
+#COPY conda-activate.sh /etc/profile.d/conda-activate.sh
 
 # notebook helper (Python 2)
-RUN conda install -y jupyter
-ENV BRANCH redir
-ADD https://raw.githubusercontent.com/nimbix/notebook-common/${BRANCH:-master}/install-notebook-common /tmp/install-notebook-common
-RUN cat /tmp/install-notebook-common | su - -c 'sed "s|<SHELL>|${SHELL}|"' | su - -c '${SHELL} -s -- '"-b ${BRANCH:-master}" && rm /tmp/install-notebook-common
-ENV BRANCH ""
+#RUN conda install -y jupyter
+#ENV BRANCH redir
+#ADD https://raw.githubusercontent.com/nimbix/notebook-common/${BRANCH:-master}/install-notebook-common /tmp/install-notebook-common
+#RUN cat /tmp/install-notebook-common | su - -c 'sed "s|<SHELL>|${SHELL}|"' | su - -c '${SHELL} -s -- '"-b ${BRANCH:-master}" && rm /tmp/install-notebook-common
+#ENV BRANCH ""
 
 # motd
 COPY motd /etc/motd
