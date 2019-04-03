@@ -1,4 +1,5 @@
 #!/bin/sh
 
-exec /usr/bin/sudo -H /opt/anaconda3/bin/conda "$@"
+source /etc/profile.d/conda-activate.sh
+exec /opt/anaconda3/bin/conda "$@"
 
