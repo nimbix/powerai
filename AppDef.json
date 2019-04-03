@@ -15,7 +15,7 @@
         "SCALE_NODES"
     ],
     "machines": [
-        "np*g[1-8]*"
+        "np9g[1-8]*"
     ],
     "vault-types": [
         "FILE",
