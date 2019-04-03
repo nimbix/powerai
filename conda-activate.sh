@@ -1,4 +1,4 @@
 :
-source /opt/anaconda2/etc/profile.d/conda.sh
-source /opt/anaconda2/bin/activate
+source /opt/anaconda3/etc/profile.d/conda.sh
+source /opt/anaconda3/bin/activate
 
