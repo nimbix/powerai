@@ -26,16 +26,14 @@ ADD JM.tar.gz /usr/local/samples
 
 # anaconda helpers
 RUN cp -f ${CONDA_INSTALL_DIR}/etc/profile.d/conda.sh /etc/profile.d
-#COPY conda-activate.sh /etc/profile.d/conda-activate.sh
+COPY conda /usr/bin/conda
 
-# notebook helper
-ENV BRANCH redir
-ADD https://raw.githubusercontent.com/nimbix/notebook-common/${BRANCH:-master}/install-notebook-common /tmp/install-notebook-common
-RUN cat /tmp/install-notebook-common | su - -c 'sed "s|<SHELL>|${SHELL}|"' | su - -c '${SHELL} -s -- '"-c -b ${BRANCH:-master}" && rm /tmp/install-notebook-common
-ENV BRANCH ""
-
-# motd
-COPY motd /etc/motd
+# install notebook
+RUN conda install -y jupyter && conda clean
+RUN apt-get update && apt-get -y install redir && apt-get clean
+RUN chmod 04555 /usr/bin/redir
+RUN ln -s /data /usr/local/data
+COPY notebook.sh /usr/local/bin/notebook.sh
 
 # AppDef
 COPY AppDef.json /etc/NAE/AppDef.json
