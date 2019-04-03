@@ -25,7 +25,7 @@ RUN mkdir -p /usr/local/samples
 ADD JM.tar.gz /usr/local/samples
 
 # anaconda helpers
-RUN cp /opt/anaconda3/etc/profile.d/conda.sh /etc/profile.d
+RUN cp -f ${CONDA_INSTALL_DIR}/etc/profile.d/conda.sh /etc/profile.d
 #COPY conda-activate.sh /etc/profile.d/conda-activate.sh
 
 # notebook helper (Python 2)
