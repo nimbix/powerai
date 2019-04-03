@@ -23,6 +23,7 @@ RUN mkdir -p /etc/NAE && cp /etc/EULA.txt /etc/NAE/license.txt && chmod 0644 /et
 # samples
 RUN mkdir -p /usr/local/notebook/samples
 ADD JM.tar.gz /usr/local/notebook/samples
+RUN chmod -R a+w /usr/local/notebook/samples
 
 # anaconda helpers
 RUN cp -f ${CONDA_INSTALL_DIR}/etc/profile.d/conda.sh /etc/profile.d
