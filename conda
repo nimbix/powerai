@@ -1,5 +1,6 @@
 #!/bin/bash
 
 source /etc/profile.d/conda.sh
-exec conda "$@"
+set -e
+conda "$@"
 
