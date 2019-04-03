@@ -11,4 +11,5 @@ cd /usr/local/data
 chown -R `id -u`:`id -g` /usr/local/samples
 exec jupyter notebook --ip=127.0.0.1 --no-browser --port=8888 \
     --certfile=/etc/JARVICE/cert.pem \
+    --NotebookApp.allow_remote_access=True \
     --NotebookApp.token=`cat /etc/JARVICE/random128.txt | cut -c 1-64`
