@@ -28,7 +28,7 @@
 # policies, either expressed or implied, of Nimbix, Inc.
 #
 
-FROM ibmcom/powerai:1.6.0-all-ubuntu18.04
+FROM ibmcom/powerai:1.6.0-all-ubuntu18.04-py3
 
 # prevent build pipelines from breaking if older CUDA installed on build box
 ENV DOCKER_NVIDIA_REQUIRE_CUDA ${NVIDIA_REQUIRE_CUDA}
