@@ -29,7 +29,7 @@ RUN cp -f ${CONDA_INSTALL_DIR}/etc/profile.d/conda.sh /etc/profile.d
 COPY conda /usr/bin/conda
 
 # install notebook
-RUN conda install -y jupyter && conda clean
+RUN conda install -y jupyter && conda clean --all
 RUN apt-get update && apt-get -y install redir && apt-get clean
 RUN chmod 04555 /usr/bin/redir
 RUN ln -s /data /usr/local/data
