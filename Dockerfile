@@ -28,12 +28,12 @@ COPY conda /usr/bin/conda
 RUN conda install -y jupyter && conda clean --all
 RUN apt-get update && apt-get -y install redir && apt-get clean
 RUN chmod 04555 /usr/bin/redir
-RUN ln -s /data /usr/local/notebook/data
 
 # samples
 RUN mkdir -p /usr/local/notebook/samples
 ADD JM.tar.gz /usr/local/notebook/samples
 RUN chmod -R a+w /usr/local/notebook/samples
+RUN ln -s /data /usr/local/notebook/data
 
 # notebook script
 COPY notebook.sh /usr/local/bin/notebook.sh
